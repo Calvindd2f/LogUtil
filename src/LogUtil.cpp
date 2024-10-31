@@ -60,27 +60,27 @@ void Log(const char* type, const char* shortDescription, bool detailedDescriptio
         }
     }
 
-extern "C" bool LogInfo(const char* shortMessage, bool detailedDescription) {
+extern "C" __declspec(dllexport) bool LogInfo(const char* shortMessage, bool detailedDescription) {
     Log("Informational", shortMessage, detailedDescription);
     return true;
-    }
+}
 
-extern "C" bool LogError(const char* shortMessage, bool detailedDescription) {
+extern "C" __declspec(dllexport) bool LogError(const char* shortMessage, bool detailedDescription) {
     Log("Error", shortMessage, detailedDescription);
     return true;
     }
 
-extern "C" bool LogWarning(const char* shortMessage, bool detailedDescription) {
+extern "C" __declspec(dllexport) bool LogWarning(const char* shortMessage, bool detailedDescription) {
     Log("Warning", shortMessage, detailedDescription);
     return true;
     }
 
-extern "C" bool LogVerbose(const char* shortMessage, bool detailedDescription) {
+extern "C" __declspec(dllexport) bool LogVerbose(const char* shortMessage, bool detailedDescription) {
     Log("Verbose", shortMessage, detailedDescription);
     return true;
     }
 
-extern "C" bool LogDebug(const char* shortMessage, bool detailedDescription) {
+extern "C" __declspec(dllexport) bool LogDebug(const char* shortMessage, bool detailedDescription) {
     Log("Debug", shortMessage, detailedDescription);
     return true;
     }
